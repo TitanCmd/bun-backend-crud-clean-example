@@ -34,6 +34,8 @@ export class CustomersApi implements ICustomersApi {
 
   async putCustomer(req: BunRequest) {
     const { id } = req.params;
+    if (!id) return badRequest();
+
     const body = (await req.json()) as CustomerUpdateRequest;
     try {
       const customer = await this.controller.update(id, body);
