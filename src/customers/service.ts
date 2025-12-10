@@ -18,7 +18,7 @@ export class CustomersService implements ICustomersService {
     return this.repo.list();
   }
 
-  create(input: CustomerPostRequest): Promise<Customer> {
+  async create(input: CustomerPostRequest): Promise<Customer> {
     if (!input.name || !input.email) throw new BadRequestError();
 
     const customer: Customer = {
