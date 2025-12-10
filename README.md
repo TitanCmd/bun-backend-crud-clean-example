@@ -2,6 +2,12 @@
 
 Small Bun + TypeScript backend that explores clean layering and DI while exposing a simple customers API.
 
+This project is primarily an exploration of the Bun framework and its features when building a backend application.
+
+As well as implementation practice for clean code, design patterns, and best practices.
+
+It is not a production-ready application and is not intended to be used in a production environment.
+
 ## Stack and approach
 
 - Bun v1.3+, TypeScript, lightweight DI container.
@@ -12,15 +18,15 @@ Small Bun + TypeScript backend that explores clean layering and DI while exposin
 
 1. Install deps
 
-```bash
-bun install
-```
+   ```bash
+   bun install
+   ```
 
 2. Run the server (defaults to port 3000)
 
-```bash
-bun start
-```
+   ```bash
+   bun start
+   ```
 
 Env overrides: `PORT`, `DATABASE_URL`, `CORS_ORIGIN`, `NODE_ENV`.
 
