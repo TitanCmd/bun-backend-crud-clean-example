@@ -1,8 +1,9 @@
 import type { ICustomersApi } from "./customers/routes";
+import { config } from "./shared/config";
 import { DI, TOKENS } from "./shared/di";
 
 const server = Bun.serve({
-  port: 3000,
+  ...config.server,
   routes: {
     "/api/customers": {
       GET: () => DI.get<ICustomersApi>(TOKENS.CUSTOMERS_API).getCustomers(),

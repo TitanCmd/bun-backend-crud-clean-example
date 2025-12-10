@@ -2,7 +2,7 @@ export class DI {
   private static container: Map<string, any> = new Map();
 
   static get<T>(token: string): T {
-    return this.container.get(token);
+    return this.container.get(token) as T;
   }
 
   static set<T>(token: string, instance: T) {
