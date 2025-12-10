@@ -8,7 +8,6 @@ export interface ICustomersController {
   list(): Promise<Customer[]>;
   create(customer: CustomerPostRequest): Promise<Customer>;
   update(id: string, customer: CustomerUpdateRequest): Promise<Customer>;
-  // deactivate(id: string): Promise<Customer>;
 }
 
 export class CustomersController implements ICustomersController {
