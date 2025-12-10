@@ -3,6 +3,12 @@ export interface ApiResponse<T> {
   error?: string;
 }
 
+export interface RequestLike {
+  json(): Promise<unknown>;
+  params?: Record<string, string>;
+  cookies?: { toJSON?(): Record<string, string> } | Record<string, string>;
+}
+
 export function json(data: any, status = 200) {
   return Response.json(data, { status });
 }

@@ -6,8 +6,9 @@ import type { ICustomersService } from "./service";
 
 export interface ICustomersController {
   list(): Promise<Customer[]>;
-  create(customer: CustomerPostRequest): any;
-  update(id: string, customer: CustomerUpdateRequest): any;
+  create(customer: CustomerPostRequest): Promise<Customer>;
+  update(id: string, customer: CustomerUpdateRequest): Promise<Customer>;
+  // deactivate(id: string): Promise<Customer>;
 }
 
 export class CustomersController implements ICustomersController {
@@ -17,11 +18,11 @@ export class CustomersController implements ICustomersController {
     return await this.service.list();
   }
 
-  async create(body: CustomerPostRequest) {
+  async create(body: CustomerPostRequest): Promise<Customer> {
     return await this.service.create(body);
   }
 
-  async update(id: string, body: CustomerUpdateRequest) {
+  async update(id: string, body: CustomerUpdateRequest): Promise<Customer> {
     return await this.service.update(id, body);
   }
 }
